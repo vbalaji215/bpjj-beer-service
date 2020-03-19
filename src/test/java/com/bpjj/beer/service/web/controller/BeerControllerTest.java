@@ -1,4 +1,4 @@
-package com.bpjj.beer.service.controller;
+package com.bpjj.beer.service.web.controller;
 
 import com.bpjj.beer.service.web.model.BeerDto;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -11,10 +11,9 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
 import java.util.UUID;
 
-import static org.junit.jupiter.api.Assertions.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-@WebMvcTest(BeerController.class)
+@WebMvcTest(com.bpjj.beer.service.controller.BeerController.class)
 class BeerControllerTest {
 
     @Autowired

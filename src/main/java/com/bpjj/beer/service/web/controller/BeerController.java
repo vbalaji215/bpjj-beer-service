@@ -1,4 +1,4 @@
-package com.bpjj.beer.service.controller;
+package com.bpjj.beer.service.web.controller;
 
 import com.bpjj.beer.service.web.model.BeerDto;
 import org.springframework.http.HttpStatus;

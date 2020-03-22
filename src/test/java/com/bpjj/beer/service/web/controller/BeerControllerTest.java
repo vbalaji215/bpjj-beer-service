@@ -1,5 +1,6 @@
 package com.bpjj.beer.service.web.controller;
 
+import com.bpjj.beer.service.services.BeerService;
 import com.bpjj.beer.service.web.model.BeerDto;
 import com.bpjj.beer.service.web.model.BeerStyle;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -9,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.autoconfigure.restdocs.AutoConfigureRestDocs;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.restdocs.RestDocumentationExtension;
 import org.springframework.restdocs.constraints.ConstraintDescriptions;
@@ -33,6 +35,9 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @AutoConfigureRestDocs(uriScheme = "${bpjj.uri.scheme}", uriHost = "${bpjj.uri.host}", uriPort = 8000)
 @WebMvcTest(BeerController.class)
 class BeerControllerTest {
+
+    @MockBean
+    BeerService beerService;
 
     @Autowired
     MockMvc mockMvc;

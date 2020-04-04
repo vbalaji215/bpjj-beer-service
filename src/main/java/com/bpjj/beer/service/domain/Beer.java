@@ -43,6 +43,7 @@ public class Beer {
     @Column(unique = true)
     private String upc;
     private BigDecimal price;
+    @Column(name="min_on_hand")
     private Integer minQtyOnHand;
     private Integer quantityToBrew;
 

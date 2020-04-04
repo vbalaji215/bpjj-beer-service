@@ -13,7 +13,7 @@ import java.math.BigDecimal;
  * vbala created on 3/19/2020
  * Inside the package - com.bpjj.beer.service.bootstrap
  **/
-@Component
+//@Component
 @Slf4j
 public class BeerServiceDataInitializer implements CommandLineRunner {
 

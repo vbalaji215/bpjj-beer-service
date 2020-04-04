@@ -73,7 +73,7 @@ class BeerControllerTest {
     void saveNewBeer() throws Exception{
         BeerDto beerDto = BeerDto.builder()
                 .beerName("New Beer")
-                .beerStyle(BeerStyle.ALE).upc(23425442L)
+                .beerStyle(BeerStyle.ALE).upc("00234254423")
                 .price(new BigDecimal(11.95)).build();
         String beerDtoJson = objectMapper.writeValueAsString(beerDto);
 
@@ -102,7 +102,7 @@ class BeerControllerTest {
     void updateBeer() throws  Exception {
         BeerDto beerDto = BeerDto.builder()
                 .beerName("New Beer")
-                .beerStyle(BeerStyle.ALE).upc(23425442L)
+                .beerStyle(BeerStyle.ALE).upc("0023425442")
                 .price(new BigDecimal(11.95)).build();
         String beerDtoJson = objectMapper.writeValueAsString(beerDto);
         mockMvc.perform(put(

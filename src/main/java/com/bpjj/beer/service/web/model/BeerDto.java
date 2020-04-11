@@ -21,7 +21,7 @@ import java.util.UUID;
 @Builder
 public class BeerDto {
     @Null
-    private UUID id;
+    private UUID beerId;
 
     @Null
     private Integer version;

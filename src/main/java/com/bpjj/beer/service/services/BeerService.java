@@ -1,6 +1,9 @@
 package com.bpjj.beer.service.services;
 
 import com.bpjj.beer.service.web.model.BeerDto;
+import com.bpjj.beer.service.web.model.BeerPagedList;
+import com.bpjj.beer.service.web.model.BeerStyle;
+import org.springframework.data.domain.PageRequest;
 
 import java.util.UUID;
 
@@ -14,4 +17,6 @@ public interface BeerService {
     BeerDto saveBeer(BeerDto beerDto);
 
     BeerDto updateBeer(UUID beerId, BeerDto beerDto);
+
+    BeerPagedList listBeers(String beerName, BeerStyle beerStyle, PageRequest of);
 }

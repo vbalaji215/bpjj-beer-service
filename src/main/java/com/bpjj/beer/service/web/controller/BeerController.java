@@ -57,7 +57,7 @@ public class BeerController {
             showInventoryOnHand = false;
         }
         BeerDto beerDto = beerService.getBeerById(beerId, showInventoryOnHand);
-        return new ResponseEntity<>(BeerDto.builder().build(), HttpStatus.OK);
+        return new ResponseEntity<>(beerDto, HttpStatus.OK);
     }
 
     @PostMapping

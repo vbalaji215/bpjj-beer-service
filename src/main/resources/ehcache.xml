@@ -1,0 +1,44 @@
+<ehcache:config
+        xmlns:ehcache="http://www.ehcache.org/v3"
+        xmlns:jcache="http://www.ehcache.org/v3/jsr107">
+
+    <!--
+      OPTIONAL
+       services to be managed and lifecycled by the CacheManager
+    -->
+    <ehcache:service>
+        <!--
+          One element in another namespace, using our JSR-107 extension as an example here
+        -->
+        <jcache:defaults enable-management="true" enable-statistics="true"/>
+    </ehcache:service>
+
+    <!--
+      OPTIONAL
+        A <cache> element defines a cache, identified by the mandatory 'alias' attribute, to be managed by the CacheManager
+    -->
+    <ehcache:cache alias="beerCache" uses-template="config-cache"/>
+    <ehcache:cache alias="beerListCache" uses-template="config-cache"/>
+
+
+
+    <!--
+      OPTIONAL
+        A <cache-template> defines a named template that can be used be <cache> definitions in this same file
+        They have all the same property as the <cache> elements above
+    -->
+    <ehcache:cache-template name="config-cache">
+        <ehcache:expiry>
+            <ehcache:ttl unit="minutes">5</ehcache:ttl>
+        </ehcache:expiry>
+        <ehcache:resources>
+            <ehcache:heap>1</ehcache:heap>
+            <ehcache:offheap unit="MB">1</ehcache:offheap>
+        </ehcache:resources>
+        <!--
+           OPTIONAL
+            Any further elements in another namespace
+        -->
+    </ehcache:cache-template>
+
+</ehcache:config>
